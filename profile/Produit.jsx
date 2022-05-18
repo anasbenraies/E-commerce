@@ -1,16 +1,25 @@
 import React from 'react'
 import { useState } from 'react'
 import {Grid, Icon, Menu, Segment, Sidebar,Image,Button,Dropdown,Input,Form,Checkbox,Popup } from 'semantic-ui-react'
+import { useDispatch,useSelector } from 'react-redux' 
+import { useEffect } from 'react'
+import {Link} from 'react-router-dom'
+
+
 
 export default function Produit({produit,list}) {
 const [visible, setVisible] =useState(false)
-console.log(produit);
 const [selected_img,setimg]=useState(produit.image[0])
 const [couleurR,setcouleurR]=useState(true)
 const [couleurN,setcouleurN]=useState(true)
 const [couleurB,setcouleurB]=useState(true)
 const [taille,setaille]=useState("S")
 const [quantite,setquantite]=useState(0)
+const [indice,setindice]=useState(0)
+const dispatch=useDispatch() 
+const listePanier=useSelector((state)=>state)
+console.log(produit);
+
 
 
    const create=(el)=>{
@@ -49,8 +58,12 @@ const handleChange =(e,data)=>{
 const handleChange2 =(e)=>{
 
     setquantite(e.target.value);
-    console.log(quantite)
+    //console.log(quantite)
 }
+useEffect(()=>{
+  
+},)
+  
 
 
 
@@ -85,7 +98,9 @@ const handleChange2 =(e)=>{
              </div>
                 <div style={{display:"flex",marginTop:"5em",justifyContent:"space-around"}}>
                   <div style={{marginLeft:"5%",height:"40em",width:"50em"}}>
+                    <Link to="/panier">
                     <Image rounded="true"  src={selected_img} fluid />
+                    </Link>
                   </div>
                   <div style={{border:"2px solid rgb(255,144,33)",borderRadius:"2.5%",padding:"5%", width:"30em"}}>
                   <Form>
@@ -130,7 +145,7 @@ const handleChange2 =(e)=>{
 
                       </div>
                     </Form.Field>
-                    <Button  style={{margin:"3em"}}content='Ajouter au panier' icon='cart' color="orange" labelPosition='left' />
+                    <Button  style={{margin:"3em"}}content='Ajouter au panier' icon='cart' color="orange" labelPosition='left' onClick={(e)=>{e.preventDefault();dispatch({type:"ADD_TO_PANIER",payload:{titreProduit:produit.titre,prixProduit:produit.prix,imageProduit:produit.image[0],QuantiteProduit:quantite,tailleProduit:taille,couleurProduit:{Blue:couleurB,Red:couleurR,black:couleurN},indice:indice}});setindice(indice+1);console.log(indice)}}/>
                   </Form>
                   </div>
                   

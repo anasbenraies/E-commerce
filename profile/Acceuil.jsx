@@ -65,7 +65,7 @@ let Acceuil = ({list}) => {
                 </Link>
                 </div>
                 <div className='box-right'>
-                  <Link to="/Homme">
+                  <Link to="/homme">
                 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.albertzips.com%2Ffileadmin%2F_processed_%2Fcsm_Fashion_Men_e98c871163.jpg&f=1&nofb=1" alt="homme" />
                 </Link>
                 <h2>Homme</h2>
