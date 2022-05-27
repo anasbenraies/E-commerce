@@ -12,10 +12,17 @@ let Homme_Cont = ({list}) => {
    const [jeansV,setjeansV]=useState("none")
    const [selected,set_selc]=useState("Jeans")
    const [big_pic,set_big_p]=useState("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.dhresource.com%2F0x0s%2Ff2-albu-g8-M01-9A-30-rBVaV1ws3s2ACg3XAATtGTWKfh4067.jpg%2Fpure-color-men-039-s-suits-size-s-m-l-xl.jpg&f=1&nofb=1")
-   const jean_p="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.dhresource.com%2F0x0s%2Ff2-albu-g8-M01-9A-30-rBVaV1ws3s2ACg3XAATtGTWKfh4067.jpg%2Fpure-color-men-039-s-suits-size-s-m-l-xl.jpg&f=1&nofb=1"
-   const [liste,set_liste_pr]=useState([{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici',link:"produit1"},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici',link:"produit2"},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici',link:"produit3"},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici',link:"produit4"},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici',link:"produit5"},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici',link:"produit7"},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici',link:"produit8"}])
-   const jeans=[{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'}]
-   const Jackets=[{image:jean_p,header:'Jacket',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jacket',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'}]
+   const jean_droit="https://static.pullandbear.net/2/photos//2022/V/0/2/p/4686/535/406/4686535406_4_1_8.jpg?t=1651502414794&imwidth=375"
+   const jean_carrot="https://static.pullandbear.net/2/photos//2022/V/0/2/p/8686/500/407/8686500407_4_1_8.jpg?t=1650884561321&imwidth=375"
+   const jean_skinny="https://static.pullandbear.net/2/photos//2022/V/0/2/p/8686/501/406/8686501406_4_1_8.jpg?t=1648482880892&imwidth=375"
+   const jean_relaxed="https://static.pullandbear.net/2/photos//2022/V/0/2/p/4686/512/712/4686512712_4_1_8.jpg?t=1646135789031&imwidth=375"
+   const jean_relaxed2="https://static.pullandbear.net/2/photos//2022/V/0/2/p/4686/512/427/4686512427_4_1_8.jpg?t=1639063037985&imwidth=375"
+   const jean_p="https://static.pullandbear.net/2/photos//2022/I/0/2/p/4686/585/400/4686585400_4_1_8.jpg?t=1652273292863&imwidth=375"
+   const jean_slim="https://static.pullandbear.net/2/photos//2022/V/0/2/p/4681/512/800/4681512800_4_1_8.jpg?t=1650896882821&imwidth=375"
+   const jacket="https://static.pullandbear.net/2/photos//2022/V/0/2/p/8711/511/800/8711511800_4_1_8.jpg?t=1644317215281&imwidth=375"
+   const [liste,set_liste_pr]=useState([{image:jean_carrot,header:'Jean carrot',meta:'Disponible',description:'3 couleurs',link:"produit1"},{image:jean_droit,jean_p,header:'Jean droit',meta:'Disponible',description:'4 couleurs',link:"produitx"},{image:jean_skinny,header:'Jean skinny',meta:'Disponible',description:'2 couleurs',link:"produit3"},{image:jean_relaxed,header:'Jean relaxed',meta:'Disponible',description:'3 couleurs',link:"produit4"},{image:jean_slim,header:'Jean slim',meta:'Disponible',description:'Jean Description ici',link:"produit5"},{image:jean_relaxed2,header:'Jean relaxed',meta:'Disponible',description:'Jean Description ici',link:"produit7"}])
+   const jeans=[{image:jean_carrot,header:'Jean carrot',meta:'Disponible',description:'3 couleurs',link:"produit1"},{image:jean_droit,jean_p,header:'Jean droit',meta:'Disponible',description:'4 couleurs',link:"produit2"},{image:jean_skinny,header:'Jean skinny',meta:'Disponible',description:'2 couleurs',link:"produit3"},{image:jean_relaxed,header:'Jean relaxed',meta:'Disponible',description:'3 couleurs',link:"produit4"},{image:jean_slim,header:'Jean slim',meta:'Disponible',description:'Jean Description ici',link:"produit5"},{image:jean_relaxed2,header:'Jean relaxed',meta:'Disponible',description:'Jean Description ici',link:"produit7"}]
+   const Jackets=[{image:jacket,header:'Jacket',meta:'Disponible',description:'Jean Description ici',link:"produit2"},{image:jacket,header:'Jacket',meta:'Disponible',description:'Jean Description ici',link:"produitx"},{image:jacket,header:'Jean',meta:'Disponible',description:'Jean Description ici',link:"produitx"},{image:jacket,header:'Jean',meta:'Disponible',description:'Jean Description ici',link:"produitx"},{image:jacket,header:'Jean',meta:'Disponible',description:'Jean Description ici',link:"produitx"},{image:jacket,header:'Jean',meta:'Disponible',description:'Jean Description ici',link:"produitx"}]
    const Montres=[{image:jean_p,header:'Montres',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'}]
    const Tshirts=[{image:jean_p,header:'T-shirts',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'},{image:jean_p,header:'Jean',meta:'Disponible',description:'Jean Description ici'}]
    const [search , setSearch]=useState("");
@@ -49,10 +56,13 @@ let Homme_Cont = ({list}) => {
                  {{el === "Jackets" &&  set_liste_pr(Jackets)}}
                  {el === "Montres" &&  set_liste_pr(Montres)}
                  {el === "T-shirts" &&  set_liste_pr(Tshirts)}
-                 {el === "Jeans" &&  set_liste_pr(jeans)}
+                 
 
-                  }}>{el}</p> }
-                { el === "Jeans"  && <div><p onMouseEnter={()=>setjeansV("block")}  className='jeans' onClick={()=>set_selc("Jeans")}>Jeans <Icon color='white' size=' small' name='long arrow alternate down'    /></p>
+                  }}>
+                    {el==="Panier"?<Link to="/panier">{el}</Link>:null}
+                    {el!=="Panier" && el}
+                    </p> }
+                { el === "Jeans"  && <div><p onMouseEnter={()=>setjeansV("block")}  className='jeans' onClick={()=>{set_selc("Jeans");set_liste_pr(jeans)}}>Jeans <Icon color='white' size=' small' name='long arrow alternate down'    /></p>
               <ul style={{display:jeansV}} onMouseLeave={()=>setjeansV("none")}>
                 <Menu.Item as='a'>
               <li    onMouseEnter={()=>setjeansV("block")}>Slim</li>
@@ -105,7 +115,7 @@ let Homme_Cont = ({list}) => {
                 <div  className='title'>
                     <div style={{display:"flex",justifyContent:"space-betweeen",alignItems:"baseline",gap:"10%",marginLeft:"80em"}}>
                         <h2 style={{paddingRight:"20%"}}>{selected}</h2>
-                        <Icon name='search'/>
+                        
                    </div>
                 </div>
 
@@ -122,7 +132,7 @@ let Homme_Cont = ({list}) => {
                </div>
 
               <div >
-                <div style={{display:"flex",justifyContent:"space-around",marginTop:"5em",gap:"23em"}}>
+                <div style={{display:"flex",justifyContent:"space-around",marginTop:"5em",gap:"23em",marginBottom:"2em"}}>
                   <p style={{margin:"5em 20em 1em13.2em" ,display:"flex",gap:"1em"}}><h5>{liste.filter(el=>el.header.toLowerCase().includes(search.toLowerCase())).length+" "}</h5> produits</p>
                   <Input icon='search' size='mini' placeholder='Chercher...' onChange={(e)=>{setSearch(e.target.value)}}/>
                 </div>

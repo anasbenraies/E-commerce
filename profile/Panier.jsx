@@ -2,21 +2,39 @@ import React from 'react'
 import { useState } from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import { Item } from 'semantic-ui-react'
-import {Grid ,Icon,Menu,Segment,Sidebar } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+import {Grid ,Icon,Menu,Segment,Sidebar,Button } from 'semantic-ui-react'
 
 export default function Panier({list}) {
-     const [visible, setVisible] =useState(false)
-    const listePanier=useSelector((state)=>state)
-    console.log(listePanier);
+    const [etat, setEtat] =useState("en attente")
+    const [visible, setVisible] =useState(false)
+    const listePanier=useSelector((state)=>state.panier)
+    //console.log(listePanier);
     const dispatch=useDispatch()
 
     const create=(el)=>{
-      return (
-           <Menu.Item as="a">
-                {el}
-           </Menu.Item>       
-      )
-      }
+
+      if(el==="Homme"){
+       return (
+        <Link to='/homme'>
+        <Menu.Item as="a">
+            {el}
+           </Menu.Item>
+            </Link>
+       )
+     }
+     else{
+        return (
+          <Menu.Item as="a">
+              {el}
+            </Menu.Item>
+        )
+     }
+
+    }
+
+
+
   return (
 
 
@@ -75,11 +93,15 @@ export default function Panier({list}) {
             </Item.Description>
          </div>
       </Item.Content>
-          <h4 style={{paddingRight:"2%"}} onClick={()=>{dispatch({type:"DELETE",payload:{index:i}})}}>❌</h4>
+          <h4 style={{paddingRight:"2%",cursor:"pointer"}} onClick={()=>{dispatch({type:"Delete_From_Panier",payload:{indice:el.indice}});console.log(listePanier)}}>❌</h4>
     </Item>)
      } 
 
 </Item.Group>
+<div>
+{(listePanier?.length>0)?<Button  inverted color='orange' style={{marginTop:"4em",marginLeft:"28em"}} onClick={()=>{setEtat("acheté");dispatch({type:"clear"})}}>Acheter</Button>:<h1 style={{marginTop:"5em",marginLeft:"12em"}}>Votre panier est vide</h1>}
+</div>
+{(etat==="acheté")?<h1 style={{marginTop:"5em",marginLeft:"9em"}}>Merci d'avoir acheté de ShoppyNet</h1>:null}
      </div>
   
   

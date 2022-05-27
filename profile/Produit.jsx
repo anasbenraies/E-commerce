@@ -15,19 +15,40 @@ const [couleurN,setcouleurN]=useState(true)
 const [couleurB,setcouleurB]=useState(true)
 const [taille,setaille]=useState("S")
 const [quantite,setquantite]=useState(0)
-const [indice,setindice]=useState(0)
+//const [indice,setindice]=useState(0)
 const dispatch=useDispatch() 
-const listePanier=useSelector((state)=>state)
-console.log(produit);
+const listePanier=useSelector((state)=>state.panier)
+const indice=useSelector((state)=>state.indice)
+//console.log(produit);
 
 
 
    const create=(el)=>{
-      return (
-           <Menu.Item as="a">
-                {el}
-           </Menu.Item>       
-      )
+     if(el==="Panier"){
+       return (
+          <Link to='/panier'>
+        <Menu.Item as="a">
+            {el}
+           </Menu.Item>
+            </Link>
+       )
+     }
+     else if(el==="Homme"){
+       return (
+        <Link to='/homme'>
+        <Menu.Item as="a">
+            {el}
+           </Menu.Item>
+            </Link>
+       )
+     }
+     else{
+        return (
+          <Menu.Item as="a">
+              {el}
+            </Menu.Item>
+        )
+     }
 
   }
 
@@ -51,7 +72,7 @@ const TaillesOptions=[
 const handleChange =(e,data)=>{
 
     setaille(data.value);
-    console.log(taille)
+   // console.log(taille)
 }
 
 
@@ -98,9 +119,9 @@ useEffect(()=>{
              </div>
                 <div style={{display:"flex",marginTop:"5em",justifyContent:"space-around"}}>
                   <div style={{marginLeft:"5%",height:"40em",width:"50em"}}>
-                    <Link to="/panier">
-                    <Image rounded="true"  src={selected_img} fluid />
-                    </Link>
+                    <div style={{width:"30em",height:"100em",marginLeft:"10em",marginTop:"2em"}}>
+                      <Image rounded="true"  src={selected_img} fluid />
+                    </div>
                   </div>
                   <div style={{border:"2px solid rgb(255,144,33)",borderRadius:"2.5%",padding:"5%", width:"30em"}}>
                   <Form>
@@ -145,7 +166,7 @@ useEffect(()=>{
 
                       </div>
                     </Form.Field>
-                    <Button  style={{margin:"3em"}}content='Ajouter au panier' icon='cart' color="orange" labelPosition='left' onClick={(e)=>{e.preventDefault();dispatch({type:"ADD_TO_PANIER",payload:{titreProduit:produit.titre,prixProduit:produit.prix,imageProduit:produit.image[0],QuantiteProduit:quantite,tailleProduit:taille,couleurProduit:{Blue:couleurB,Red:couleurR,black:couleurN},indice:indice}});setindice(indice+1);console.log(indice)}}/>
+                    <Button  style={{margin:"3em"}}content='Ajouter au panier' icon='cart' color="orange" labelPosition='left' onClick={(e)=>{e.preventDefault();dispatch({type:"ADD_TO_PANIER",payload:{titreProduit:produit.titre,prixProduit:produit.prix,imageProduit:produit.image[0],QuantiteProduit:quantite,tailleProduit:taille,couleurProduit:{Blue:couleurB,Red:couleurR,black:couleurN},indice:indice}});dispatch({type:'increment'});console.log(indice);console.log(listePanier)}}/>
                   </Form>
                   </div>
                   
